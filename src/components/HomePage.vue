@@ -8,131 +8,12 @@
 		<ion-content padding color="secondary">
 			<ion-grid>
 				<ion-row>
-					<ion-col>
-						<div>
-							<ion-card>
-								<ion-card-header>
-									<ion-icon name="folder" />
-									<ion-card-subtitle>Corso 1</ion-card-subtitle>
-								</ion-card-header>
-							</ion-card>
-						</div>
-					</ion-col>
-					<ion-col>
-						<div>
-							<ion-card>
-								<ion-card-header>
-									<ion-icon name="folder" />
-									<ion-card-subtitle>Corso 1</ion-card-subtitle>
-								</ion-card-header>
-							</ion-card>
-						</div>
-					</ion-col>
-					<ion-col>
-						<div>
-							<ion-card>
-								<ion-card-header>
-									<ion-icon name="folder" />
-									<ion-card-subtitle>Corso 1</ion-card-subtitle>
-								</ion-card-header>
-							</ion-card>
-						</div>
-					</ion-col>
-					<ion-col>
-						<div>
-							<ion-card>
-								<ion-card-header>
-									<ion-icon name="folder" />
-									<ion-card-subtitle>Corso 1</ion-card-subtitle>
-								</ion-card-header>
-							</ion-card>
-						</div>
-					</ion-col>
-					<ion-col>
-						<div>
-							<ion-card>
-								<ion-card-header>
-									<ion-icon name="folder" />
-									<ion-card-subtitle>Corso 1</ion-card-subtitle>
-								</ion-card-header>
-							</ion-card>
-						</div>
-					</ion-col>
-					<ion-col>
-						<div>
-							<ion-card>
-								<ion-card-header>
-									<ion-icon name="folder" />
-									<ion-card-subtitle>Corso 1</ion-card-subtitle>
-								</ion-card-header>
-							</ion-card>
-						</div>
-					</ion-col>
-					<ion-col>
-						<div>
-							<ion-card>
-								<ion-card-header>
-									<ion-icon name="folder" />
-									<ion-card-subtitle>Corso 1</ion-card-subtitle>
-								</ion-card-header>
-							</ion-card>
-						</div>
-					</ion-col>
-					<ion-col>
-						<div>
-							<ion-card>
-								<ion-card-header>
-									<ion-icon name="folder" />
-									<ion-card-subtitle>Corso 1</ion-card-subtitle>
-								</ion-card-header>
-							</ion-card>
-						</div>
-					</ion-col>
-					<ion-col>
-						<div>
-							<ion-card>
-								<ion-card-header>
-									<ion-icon name="folder" />
-									<ion-card-subtitle>Corso 1</ion-card-subtitle>
-								</ion-card-header>
-							</ion-card>
-						</div>
-					</ion-col>
-					<ion-col>
-						<div>
-							<ion-card>
-								<ion-card-header>
-									<ion-icon name="folder" />
-									<ion-card-subtitle>Corso 1</ion-card-subtitle>
-								</ion-card-header>
-							</ion-card>
-						</div>
-					</ion-col>
-					<ion-col>
-						<div>
-							<ion-card>
-								<ion-card-header>
-									<ion-icon name="folder" />
-									<ion-card-subtitle>Corso 1</ion-card-subtitle>
-								</ion-card-header>
-							</ion-card>
-						</div>
-					</ion-col>
-					<ion-col>
-						<div>
-							<ion-card>
-								<ion-card-header>
-									<ion-icon name="folder" />
-									<ion-card-subtitle>Corso 1</ion-card-subtitle>
-								</ion-card-header>
-							</ion-card>
-						</div>
-					</ion-col>
+					<Card :name=n type="folder" v-bind:key="index" v-for="(n, index) in names" />
 				</ion-row>
 			</ion-grid>
 			<ion-fab vertical="bottom" horizontal="end" slot="fixed">
 				<ion-fab-button @click="$router.push({ name: 'new-item' })">
-					<ion-icon name="add" />
+					<ion-icon size="large" name="add" />
 				</ion-fab-button>
 			</ion-fab>
 		</ion-content>
@@ -140,18 +21,33 @@
 </template>
 
 <script>
+	import Card from '@/components/Card.vue'
+    
 	export default {
 		name: "HomePage",
-		props: {
-			msg: String
-		}
+		components: {
+            Card
+		},
+		data() {
+            return {
+				oldnames: [ 
+					{ name:"Logica", docs:"5" },
+					{ name:"Info", docs:"3" },
+					{ name:"Generale", docs:"9" },
+					{ name:"Statistica", docs:"6" },
+				],
+				names: ["Logica", "Info", "Generale", "Statistica", "", "", "", "", "", "", "", ""]
+            };
+        },
 	};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-	.sc-ion-card-md-h, .sc-ion-card-ios-h{
-		background: var(--ion-color-tertiary);
+	ion-card{
+		/*background: var(--ion-color-tertiary);*/
+		background: transparent;
+		box-shadow: none;
 	}
 	ion-card ion-icon {
 		color: #383838;

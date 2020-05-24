@@ -8,7 +8,7 @@
 
 <script>
 	export default {
-	name: "app"
+		name: "app"
 	};
 </script>
 
@@ -21,14 +21,14 @@
 		--ion-color-primary-shade: #005a00;
 		--ion-color-primary-tint: #1a751a;
 
-		--ion-color-secondary: #f2f2f2;
+		--ion-color-secondary: #F2F2F2;
 		--ion-color-secondary-rgb: 0,102,0;
 		--ion-color-secondary-contrast: #ffffff;
 		--ion-color-secondary-contrast-rgb: 255,255,255;
 		--ion-color-secondary-shade: #005a00;
 		--ion-color-secondary-tint: #1a751a;
 	
-		--ion-color-tertiary: #FFFFFF;
+		--ion-color-tertiary: #EFEEEE;
 		--ion-color-tertiary-rgb: 0,102,0;
 		--ion-color-tertiary-contrast: #ffffff;
 		--ion-color-tertiary-contrast-rgb: 255,255,255;
@@ -52,5 +52,14 @@
 		--ion-color-contrast-rgb: var(--ion-color-newcolor-contrast-rgb);
 		--ion-color-shade: var(--ion-color-newcolor-shade);
 		--ion-color-tint: var(--ion-color-newcolor-tint);
+	}
+
+	ion-icon.action-sheet-icon.sc-ion-action-sheet-md{
+		font-size: 20px;
+		padding: 2px 0px 2px 2px;
+	}
+	.action-sheet-group.action-sheet-group-cancel.sc-ion-action-sheet-md ion-icon.action-sheet-icon.sc-ion-action-sheet-md{
+		font-size: 24px;
+		padding: 0px 0px 4px 0px;
 	}
 </style>
